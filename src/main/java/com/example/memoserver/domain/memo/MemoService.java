@@ -16,11 +16,11 @@ import java.util.List;
 public class MemoService {
     private final MemoRepository memoRepository;
 
-    public ResponseGetMemoPage getMemos(int page) {
+    public ResponseGetMemoPage getMemos(int page, String username) {
         Sort sort = Sort.by(Sort.Direction.DESC, "createdAt");
         Pageable pageable = PageRequest.of(page, 10, sort);
 
-        Page<MemoEntity> result = memoRepository.findAll(pageable);
+        Page<MemoEntity> result = memoRepository.findByUser_username(username, pageable);
 
         ResponseGetMemoPage responseGetMemoPage = new ResponseGetMemoPage();
         responseGetMemoPage.setTotalPages(result.getTotalPages());

@@ -19,6 +19,6 @@ public class MemoController {
             Principal principal
     ) {
         principal.getName();
-        return ResponseEntity.ok(memoService.getMemos(page));
+        return ResponseEntity.ok(memoService.getMemos(page, principal.getName()));
     }
 }
