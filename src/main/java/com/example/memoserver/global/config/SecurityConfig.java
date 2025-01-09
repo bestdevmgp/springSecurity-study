@@ -1,7 +1,6 @@
 package com.example.memoserver.global.config;
 
 import com.example.memoserver.global.TokenAuthenticationFilter;
-import com.example.memoserver.global.TokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

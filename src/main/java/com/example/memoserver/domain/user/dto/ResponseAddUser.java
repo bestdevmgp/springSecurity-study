@@ -7,6 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ResponseAddUser {
+
     private String username;
 
     public ResponseAddUser(UserEntity user) {

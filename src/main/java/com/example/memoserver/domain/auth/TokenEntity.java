@@ -16,10 +16,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @Table(name = "tokens")
 public class TokenEntity {
+
     @Id
     private String username;
 
     @Column(nullable = false)
     private String token;
-
 }

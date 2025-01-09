@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Setter
 @NoArgsConstructor
 public class ResponseGetMemo {
+
     private Long id;
 
     private String content;

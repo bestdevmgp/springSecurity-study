@@ -22,6 +22,7 @@ public class TokenService {
     private final PasswordEncoder passwordEncoder;
 
     public ResponseCreateAccessToken createAccessTokenByUsernamePassword(RequestTokenWithUsernamePassword request) {
+
         UserEntity user = userService.getUserByUsername(request.getUsername());
 
         if (user == null) {
@@ -40,6 +41,7 @@ public class TokenService {
     }
 
     public ResponseCreateAccessToken createAccessTokenByRefreshToken(RequestTokenWithRefreshToken request) {
+
         Claims claims = tokenProvider.getClaimsFromToken(request.getRefreshToken());
 
         if (claims == null || claims.get("type", String.class).equals(TokenProvider.TYPE_REFRESH)) {

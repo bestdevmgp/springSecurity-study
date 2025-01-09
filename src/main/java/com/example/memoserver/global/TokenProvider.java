@@ -22,6 +22,7 @@ import java.util.List;
 
 @Service
 public class TokenProvider {
+
     public static final String TYPE_ACCESS = "access";
     public static final String TYPE_REFRESH = "refresh";
 
@@ -72,6 +73,7 @@ public class TokenProvider {
                 .password("")
                 .authorities(authorities)
                 .build();
+        
         return new UsernamePasswordAuthenticationToken(userDetails, null, authorities);
     }
 }

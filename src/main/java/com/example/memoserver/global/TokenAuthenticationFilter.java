@@ -17,6 +17,7 @@ import java.io.IOException;
 @Component
 @RequiredArgsConstructor
 public class TokenAuthenticationFilter extends OncePerRequestFilter {
+
     private TokenProvider tokenProvider;
 
     @Override
@@ -47,6 +48,7 @@ public class TokenAuthenticationFilter extends OncePerRequestFilter {
     private String getHeaderValue(HttpServletRequest request) {
         String headerValue = request.getHeader("Authorization");
         String prefix = "Bearer ";
+
         if (headerValue != null && headerValue.startsWith(prefix)) {
             return headerValue.substring(prefix.length());
         } else

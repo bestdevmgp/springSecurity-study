@@ -8,6 +8,7 @@ import com.example.memoserver.domain.user.dto.RequestAddUser;
 import com.example.memoserver.domain.user.dto.ResponseAddUser;
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/auth")
+@Slf4j
 public class AuthController {
+
     private final UserService userService;
     private final TokenService tokenService;
 
